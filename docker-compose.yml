@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: python-np-mpl:latest
+    container_name: python_app
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: python3
+    # 必要に応じてポート公開や環境変数設定を追加
+    # ports:
+    #   - "8888:8888"  # 例えば Jupyter Notebook 用
+    # environment:
+    #   - ENV_VAR=VALUE
+
