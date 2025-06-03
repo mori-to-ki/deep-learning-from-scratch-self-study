@@ -2,11 +2,11 @@ import os
 import numpy as np
 import matplotlib.pylab as plt
 
-def plot_function(func, filename):
-    x = np.arange(-5.0, 5.0, 0.1)
+def plot_function(func, filename, x_min=-5.0, x_max=5.0, y_min=-0.1, y_max=1.1):
+    x = np.arange(x_min, x_max, 0.1)
     y = func(x)
     plt.plot(x, y)
-    plt.ylim([-0.1, 1.1])
+    plt.ylim([y_min, y_max])
 
     # 画像保存のための共通処理
     current_dir = os.path.dirname(os.path.abspath(__file__))
