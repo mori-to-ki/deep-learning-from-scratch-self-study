@@ -1,3 +1,5 @@
+# https://github.com/oreilly-japan/deep-learning-from-scratch/blob/master/dataset/mnist.py
+
 # coding: utf-8
 try:
     import urllib.request
