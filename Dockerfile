@@ -11,12 +11,16 @@ RUN apt-get update && \
     pip install --upgrade pip && \
     pip install --no-cache-dir \
       numpy \
-      matplotlib && \
+      matplotlib \
+      Image && \
     apt-get purge -y --auto-remove build-essential && \
     rm -rf /var/lib/apt/lists/*
 
 # 作業ディレクトリを設定
 WORKDIR /app
+
+# python実行ディレクトリを指定
+ENV PYTHONPATH=$PYTHONPATH:/app
 
 # ホスト側の全ファイルをコンテナ内にコピー
 COPY . /app
